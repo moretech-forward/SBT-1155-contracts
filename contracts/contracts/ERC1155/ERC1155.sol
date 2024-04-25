@@ -182,6 +182,34 @@ abstract contract ERC1155 {
             "UNSAFE_RECIPIENT"
         );
     }
+
+    function _batchBurn(
+        address from,
+        uint256[] memory ids,
+        uint256[] memory amounts
+    ) internal virtual {
+        uint256 idsLength = ids.length; // Saves MLOADs.
+
+        require(idsLength == amounts.length, "LENGTH_MISMATCH");
+
+        for (uint256 i = 0; i < idsLength; ) {
+            balanceOf[from][ids[i]] -= amounts[i];
+
+            // An array can't have a total length
+            // larger than the max uint256 value.
+            unchecked {
+                ++i;
+            }
+        }
+
+        emit TransferBatch(msg.sender, from, address(0), ids, amounts);
+    }
+
+    function _burn(address from, uint256 id, uint256 amount) internal virtual {
+        balanceOf[from][id] -= amount;
+
+        emit TransferSingle(msg.sender, from, address(0), id, amount);
+    }
 }
 
 /// @title ERC1155 Token Receiver Interface
