@@ -68,7 +68,6 @@ contract Soulbound is ERC1155, Owned {
     /// @param from The address from which tokens will be burned.
     /// @param tokenId The ID of the token to burn.
     /// @param amount The amount of the token to be burned.
-
     function burn(
         address from,
         uint256 tokenId,

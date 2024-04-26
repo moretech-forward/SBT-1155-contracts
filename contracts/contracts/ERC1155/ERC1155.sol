@@ -183,6 +183,12 @@ abstract contract ERC1155 {
         );
     }
 
+    /// @notice Internal function for batch burning multiple token types owned by a specific address.
+    /// @dev Decreases the balance of each token ID by the corresponding amount in the provided arrays.
+    /// @dev Reverts if the lengths of `ids` and `amounts` arrays are not equal.
+    /// @param from Address of the token owner.
+    /// @param ids Array containing the IDs of the tokens to be burned.
+    /// @param amounts Array containing the amounts of tokens to be burned.
     function _batchBurn(
         address from,
         uint256[] memory ids,
@@ -205,6 +211,11 @@ abstract contract ERC1155 {
         emit TransferBatch(msg.sender, from, address(0), ids, amounts);
     }
 
+    /// @notice Internal function for burning a specific amount of a token type owned by a specific address.
+    /// @dev Decreases the balance of the specified token ID by the provided amount.
+    /// @param from Address of the token owner.
+    /// @param id ID of the token to be burned.
+    /// @param amount Amount of the token to be burned.
     function _burn(address from, uint256 id, uint256 amount) internal virtual {
         balanceOf[from][id] -= amount;
 
