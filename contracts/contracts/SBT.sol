@@ -34,7 +34,7 @@ contract Soulbound is ERC1155, Owned {
         address to,
         uint256 tokenId,
         uint256 amount
-    ) external onlyOwner {
+    ) external payable onlyOwner {
         _mint(to, tokenId, amount, "");
     }
 
@@ -47,7 +47,7 @@ contract Soulbound is ERC1155, Owned {
         address to,
         uint256[] memory tokenIds,
         uint256[] memory amounts
-    ) external onlyOwner {
+    ) external payable onlyOwner {
         _batchMint(to, tokenIds, amounts, "");
     }
 
@@ -59,7 +59,7 @@ contract Soulbound is ERC1155, Owned {
     function setURI(
         uint256 tokenId,
         string memory tokenURI
-    ) external onlyOwner {
+    ) external payable onlyOwner {
         _setURI(tokenId, tokenURI);
     }
 
@@ -72,7 +72,7 @@ contract Soulbound is ERC1155, Owned {
         address from,
         uint256 tokenId,
         uint256 amount
-    ) external onlyOwner {
+    ) external payable onlyOwner {
         _burn(from, tokenId, amount);
     }
 
@@ -85,7 +85,7 @@ contract Soulbound is ERC1155, Owned {
         address from,
         uint256[] memory tokenIds,
         uint256[] memory amounts
-    ) external onlyOwner {
+    ) external payable onlyOwner {
         _batchBurn(from, tokenIds, amounts);
     }
 }
