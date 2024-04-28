@@ -28,9 +28,7 @@ abstract contract Owned {
     /// @notice Transfers ownership of the contract to a new address, or relinquishes ownership if the zero address is passed.
     /// @dev Can only be called by the current owner.
     /// @param newOwner The address to transfer ownership to, or the zero address to relinquish ownership.
-    function transferOwnership(
-        address newOwner
-    ) external payable virtual onlyOwner {
+    function transferOwnership(address newOwner) external virtual onlyOwner {
         owner = newOwner;
         emit OwnershipTransferred(msg.sender, newOwner);
     }
