@@ -1,7 +1,12 @@
 # SBT-1155
 
 - [SBT-721/1155 - MoreTech](https://docs.google.com/document/d/1FPTiTTb970ODTL0-vlGv-fciU8qfFNAQoEqqIGf7BJw/edit#heading=h.6a48bav376lt)
-- [contract_review_SBT-721/1155_MoreTech](https://docs.google.com/document/d/1DRR1SXpwc6SkerLK1nf6yogMX41ZiaJCP-GioCwgtBw/edit)
+- [contract_review_SBT-1155_MoreTech](https://docs.google.com/document/d/1B82YySuvwJONW8Tcr1FfqJ04KXCzaWUDqyK44_1jMNk/edit)
+
+## Docs
+
+- [Docs](https://github.com/moretech-forward/SBT-1155/blob/main/contracts/Docs.md)
+- [Audit](https://github.com/moretech-forward/SBT-1155/blob/main/contracts/audit/Audit.md)
 
 ## Usage
 
@@ -14,7 +19,3 @@ npx hardhat compile
 npx hardhat test
 ```
 
-## Docs
-
-- [Docs](https://github.com/moretech-forward/SBT-1155/blob/main/contracts/Docs.md)
-- [Audit](https://github.com/moretech-forward/SBT-1155/blob/main/contracts/audit/Audit.md)
