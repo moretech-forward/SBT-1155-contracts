@@ -109,16 +109,40 @@ Can only be called by the current `owner`.
   - If an error occurs, you can burn the tokens
 - Next, you can give up ownership of the contract so that no one can manipulate the tokens anymore
 
-## Additional scenarios
+## Explain possible use cases & examples
 
 - **Identity Verification and Document Authentication**
 
   - Problem: Without SBTs, employers and educational institutions spend a lot of time and resources authenticating academic and professional credentials.
   - Solution: SBTs can serve as reliable digital evidence of professional accomplishments and skills, making the verification process easier and faster.
 
-- **Access to personalized services and privileges**:
+- **Access to personalized services and privileges**
+
   - Problem: Often people trade special points, discounts and coupons, which is sometimes not welcomed by the issuer
   - Solution: SBTs are non-transferable, i.e. if a person has received a coupon/discount, they will not sell it to anyone else
-- **SBT for “punishment ”**
+
+- **SBT for “punishment”**
+
   - Problem: Sometimes it is necessary to mark a person as undesirable, but if standard NFTs are used, the user can avoid the “black mark”
   - Solution: Use SBT, since it is not transferable, and then when the person redeems himself, the SBT administrator can burn his token.
+
+- **Academic Credentials**
+
+  - Universities and educational institutions can issue SBTs as digital diplomas or certificates. These tokens would serve as immutable records of a student's achievements and qualifications, accessible by potential employers or other educational institutions.
+
+- **Workshop and Seminar Attendance**
+
+  - Organizers of workshops, seminars, or conferences can issue SBTs as proof of attendance or completion. These tokens can be valuable for professionals who need to demonstrate ongoing education or training in their field.
+
+- **Membership Affiliations**
+  - Clubs, associations, and societies can issue SBTs to their members. These tokens can confirm membership status and the rights associated with it, such as access to members-only areas or content.
+- **Employee Recognition**
+  - Companies can issue SBTs as a form of employee recognition for milestones like years of service, exceptional performance, or completion of training programs. This could enhance employee motivation and engagement.
+- **Event Tickets**
+  - Event organizers can issue SBTs as non-transferable tickets, ensuring that only the original purchaser can access the event and reducing the risk of fraud or scalping.
+- **Gaming Achievements**:
+  - In the gaming industry, developers can issue SBTs to players for in-game achievements or rare item collections. These tokens could serve as bragging rights within the community and might be used to unlock special features or content.
+- **Voting Rights**
+  - Non-profit organizations or decentralized autonomous organizations (DAOs) could use SBTs to manage voting rights among members. The tokens could represent voting power or membership in governance processes.
+- **Trust and Reputation Systems**
+  - Platforms that rely on trust, like freelance job sites or peer-to-peer marketplaces, user's could use SBTs to represent user ratings or reviews, making these elements of a reputation non-transferable and tied to actual interactions on the platform.
