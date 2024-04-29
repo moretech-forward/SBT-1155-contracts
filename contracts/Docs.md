@@ -101,3 +101,24 @@ Can only be called by the current `owner`.
   ]
 }
 ```
+
+## Usage
+
+- Deploy contract
+- Token minting
+  - If an error occurs, you can burn the tokens
+- Next, you can give up ownership of the contract so that no one can manipulate the tokens anymore
+
+## Additional scenarios
+
+- **Identity Verification and Document Authentication**
+
+  - Problem: Without SBTs, employers and educational institutions spend a lot of time and resources authenticating academic and professional credentials.
+  - Solution: SBTs can serve as reliable digital evidence of professional accomplishments and skills, making the verification process easier and faster.
+
+- **Access to personalized services and privileges**:
+  - Problem: Often people trade special points, discounts and coupons, which is sometimes not welcomed by the issuer
+  - Solution: SBTs are non-transferable, i.e. if a person has received a coupon/discount, they will not sell it to anyone else
+- **SBT for “punishment ”**
+  - Problem: Sometimes it is necessary to mark a person as undesirable, but if standard NFTs are used, the user can avoid the “black mark”
+  - Solution: Use SBT, since it is not transferable, and then when the person redeems himself, the SBT administrator can burn his token.
