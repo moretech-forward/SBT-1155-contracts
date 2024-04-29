@@ -16,5 +16,5 @@ npx hardhat test
 
 ## Docs
 
-- [Docs]()
-- [Audit]()
+- [Docs](https://github.com/moretech-forward/SBT-1155/blob/main/contracts/Docs.md)
+- [Audit](https://github.com/moretech-forward/SBT-1155/blob/main/contracts/audit/Audit.md)
