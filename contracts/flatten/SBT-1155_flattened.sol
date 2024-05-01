@@ -201,6 +201,7 @@ abstract contract ERC1155 {
         require(idsLength == amounts.length, "LENGTH_MISMATCH");
 
         for (uint256 i = 0; i < idsLength; ) {
+            require(amounts[i] > 0, "ZERO_AMOUNT");
             balanceOf[to][ids[i]] += amounts[i];
 
             unchecked {
@@ -326,6 +327,7 @@ contract Soulbound is ERC1155, Owned {
         uint256 tokenId,
         uint256 amount
     ) external onlyOwner {
+        require(amount > 0, "ZERO_AMOUNT");
         _mint(to, tokenId, amount, "");
     }
 
