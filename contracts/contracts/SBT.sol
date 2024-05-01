@@ -35,6 +35,7 @@ contract Soulbound is ERC1155, Owned {
         uint256 tokenId,
         uint256 amount
     ) external onlyOwner {
+        require(amount > 0, "ZERO_AMOUNT");
         _mint(to, tokenId, amount, "");
     }
 

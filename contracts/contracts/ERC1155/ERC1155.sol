@@ -160,6 +160,7 @@ abstract contract ERC1155 {
         require(idsLength == amounts.length, "LENGTH_MISMATCH");
 
         for (uint256 i = 0; i < idsLength; ) {
+            require(amounts[i] > 0, "ZERO_AMOUNT");
             balanceOf[to][ids[i]] += amounts[i];
 
             unchecked {
