@@ -1,0 +1,16 @@
+{
+  "name": "erc721-admin",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "tailwindcss": "^3.4.3"
+  },
+  "scripts": {
+    "dev": "npx tailwindcss -i ./input.css -o ./output.css --watch",
+    "build": "npx tailwindcss -i ./input.css -o ./build.css --minify"
+  },
+  "devDependencies": {
+    "daisyui": "^4.10.3"
+  }
+}
