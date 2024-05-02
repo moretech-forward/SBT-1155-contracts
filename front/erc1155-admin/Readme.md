@@ -1,4 +1,4 @@
-### SBT721 - Admin panel
+### SBT1155 - Admin panel
 
 install requirements
 
