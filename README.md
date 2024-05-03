@@ -5,17 +5,15 @@
 
 ## Docs
 
-- [Docs](https://github.com/moretech-forward/SBT-1155/blob/main/contracts/Docs.md)
-- [Audit](https://github.com/moretech-forward/SBT-1155/blob/main/contracts/audit/Audit.md)
+- [Docs](https://github.com/moretech-forward/SBT-1155/blob/main/Docs.md)
+- [Audit](https://github.com/moretech-forward/SBT-1155/blob/main/audit/Audit.md)
 
 ## Usage
 
 ```sh
-git clone git@github.com:moretech-forward/SBT-1155.git
-cd SBT-1155
-cd contracts
+git clone git@github.com:moretech-forward/SBT-1155-contracts.git
+cd SBT-1155-contracts
 npm install
 npx hardhat compile
 npx hardhat test
 ```
-
