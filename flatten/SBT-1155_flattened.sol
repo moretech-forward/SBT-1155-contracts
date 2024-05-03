@@ -300,6 +300,9 @@ pragma solidity ^0.8.23;
 /// @notice Implements non-transferable ERC1155 tokens under the management of an owner.
 /// @dev Extends ERC1155 for multi-token functionality and Owned for access control.
 contract Soulbound is ERC1155, Owned {
+    /// @notice Auxiliary variable for frontend
+    address public immutable myAddr;
+
     /// @notice Name of the token collection.
     string public name;
 
@@ -315,6 +318,7 @@ contract Soulbound is ERC1155, Owned {
     ) payable ERC1155() Owned(msg.sender) {
         name = _name;
         symbol = _symbol;
+        myAddr = address(this);
     }
 
     /// @notice Mints a specified amount of tokens to a designated account.
