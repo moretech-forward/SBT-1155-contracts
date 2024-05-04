@@ -7,6 +7,7 @@
   "dependencies": {
     "@nomiclabs/hardhat-etherscan": "^3.1.8",
     "dotenv": "^16.4.4",
+    "hrabi": "^1.1.1",
     "solmate": "^6.2.0"
   }
 }
