@@ -1,13 +1,9 @@
 [
   "constructor(string _name, string _symbol) payable",
   "event OwnershipTransferred(address indexed user, address indexed newOwner)",
-  "event TransferBatch(address indexed operator, address indexed from, address indexed to, uint256[] ids, uint256[] amounts)",
   "event TransferSingle(address indexed operator, address indexed from, address indexed to, uint256 id, uint256 amount)",
   "event URI(string value, uint256 indexed id)",
   "function balanceOf(address, uint256) view returns (uint256)",
-  "function balanceOfBatch(address[] owners, uint256[] ids) view returns (uint256[] balances)",
-  "function batchBurn(address from, uint256[] tokenIds, uint256[] amounts)",
-  "function batchMint(address to, uint256[] tokenIds, uint256[] amounts)",
   "function burn(address from, uint256 tokenId, uint256 amount)",
   "function mint(address to, uint256 tokenId, uint256 amount)",
   "function myAddr() view returns (address)",

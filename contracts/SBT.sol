@@ -43,19 +43,6 @@ contract Soulbound is ERC1155, Owned {
         _mint(to, tokenId, amount, "");
     }
 
-    /// @notice Mints batches of tokens to a single recipient.
-    /// @dev Only the owner can execute batch minting.
-    /// @param to The address of the recipient receiving the tokens.
-    /// @param tokenIds An array of token IDs to be minted.
-    /// @param amounts An array of amounts for each token ID being minted.
-    function batchMint(
-        address to,
-        uint256[] memory tokenIds,
-        uint256[] memory amounts
-    ) external onlyOwner {
-        _batchMint(to, tokenIds, amounts, "");
-    }
-
     /// @notice Sets or updates the metadata URI for a specific token ID.
     /// @dev Only the contract owner can call this function to set or update the URI associated with a given token ID.
     /// This allows for dynamic metadata updates post-minting, which can be essential for certain applications of ERC1155 tokens.
@@ -81,16 +68,31 @@ contract Soulbound is ERC1155, Owned {
         _burn(from, tokenId, amount);
     }
 
+    /// @notice Mints batches of tokens to a single recipient.
+    /// @dev Only the owner can execute batch minting.
+    /// @dev Removed at the suggestion of the Forward Protocol team
+    /// @param to The address of the recipient receiving the tokens.
+    /// @param tokenIds An array of token IDs to be minted.
+    /// @param amounts An array of amounts for each token ID being minted.
+    // function batchMint(
+    //     address to,
+    //     uint256[] memory tokenIds,
+    //     uint256[] memory amounts
+    // ) external onlyOwner {
+    //     _batchMint(to, tokenIds, amounts, "");
+    // }
+
     /// @notice Burns multiple tokens with varying amounts from a given address.
     /// @dev Only the owner of the contract can call this function.
+    /// @dev Removed at the suggestion of the Forward Protocol team
     /// @param from The address from which tokens will be burned.
     /// @param tokenIds An array of token IDs to burn.
     /// @param amounts An array of amounts corresponding to each token ID to be burned.
-    function batchBurn(
-        address from,
-        uint256[] memory tokenIds,
-        uint256[] memory amounts
-    ) external onlyOwner {
-        _batchBurn(from, tokenIds, amounts);
-    }
+    // function batchBurn(
+    //     address from,
+    //     uint256[] memory tokenIds,
+    //     uint256[] memory amounts
+    // ) external onlyOwner {
+    //     _batchBurn(from, tokenIds, amounts);
+    // }
 }

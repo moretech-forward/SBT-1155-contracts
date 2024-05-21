@@ -29,13 +29,13 @@ abstract contract ERC1155 {
     /// @param to The address which received the tokens.
     /// @param ids An array of token IDs.
     /// @param amounts An array of transfer amounts per token ID.
-    event TransferBatch(
-        address indexed operator,
-        address indexed from,
-        address indexed to,
-        uint256[] ids,
-        uint256[] amounts
-    );
+    // event TransferBatch(
+    //     address indexed operator,
+    //     address indexed from,
+    //     address indexed to,
+    //     uint256[] ids,
+    //     uint256[] amounts
+    // );
 
     /// @notice Emitted when the URI for a token ID is set or updated.
     /// @param value The new URI string associated with the token.
@@ -80,20 +80,20 @@ abstract contract ERC1155 {
     /// @param owners An array of owner addresses.
     /// @param ids An array of token IDs.
     /// @return balances An array containing the balance of each token for each owner.
-    function balanceOfBatch(
-        address[] calldata owners,
-        uint256[] calldata ids
-    ) public view virtual returns (uint256[] memory balances) {
-        require(owners.length == ids.length, "LENGTH_MISMATCH");
+    // function balanceOfBatch(
+    //     address[] calldata owners,
+    //     uint256[] calldata ids
+    // ) public view virtual returns (uint256[] memory balances) {
+    //     require(owners.length == ids.length, "LENGTH_MISMATCH");
 
-        balances = new uint256[](owners.length);
+    //     balances = new uint256[](owners.length);
 
-        unchecked {
-            for (uint256 i = 0; i < owners.length; ++i) {
-                balances[i] = balanceOf[owners[i]][ids[i]];
-            }
-        }
-    }
+    //     unchecked {
+    //         for (uint256 i = 0; i < owners.length; ++i) {
+    //             balances[i] = balanceOf[owners[i]][ids[i]];
+    //         }
+    //     }
+    // }
 
     /*//////////////////////////////////////////////////////////////
                               ERC165 LOGIC
@@ -149,40 +149,40 @@ abstract contract ERC1155 {
     /// @param ids An array of token IDs to mint.
     /// @param amounts An array of quantities of each token to mint.
     /// @param data Additional data with no specified format, sent in call to recipient.
-    function _batchMint(
-        address to,
-        uint256[] memory ids,
-        uint256[] memory amounts,
-        bytes memory data
-    ) internal virtual {
-        uint256 idsLength = ids.length; // Saves MLOADs.
+    // function _batchMint(
+    //     address to,
+    //     uint256[] memory ids,
+    //     uint256[] memory amounts,
+    //     bytes memory data
+    // ) internal virtual {
+    //     uint256 idsLength = ids.length; // Saves MLOADs.
 
-        require(idsLength == amounts.length, "LENGTH_MISMATCH");
+    //     require(idsLength == amounts.length, "LENGTH_MISMATCH");
 
-        for (uint256 i = 0; i < idsLength; ) {
-            require(amounts[i] > 0, "ZERO_AMOUNT");
-            balanceOf[to][ids[i]] += amounts[i];
+    //     for (uint256 i = 0; i < idsLength; ) {
+    //         require(amounts[i] > 0, "ZERO_AMOUNT");
+    //         balanceOf[to][ids[i]] += amounts[i];
 
-            unchecked {
-                ++i;
-            }
-        }
+    //         unchecked {
+    //             ++i;
+    //         }
+    //     }
 
-        emit TransferBatch(msg.sender, address(0), to, ids, amounts);
+    //     emit TransferBatch(msg.sender, address(0), to, ids, amounts);
 
-        require(
-            to.code.length == 0
-                ? to != address(0)
-                : ERC1155TokenReceiver(to).onERC1155BatchReceived(
-                    msg.sender,
-                    address(0),
-                    ids,
-                    amounts,
-                    data
-                ) == ERC1155TokenReceiver.onERC1155BatchReceived.selector,
-            "UNSAFE_RECIPIENT"
-        );
-    }
+    //     require(
+    //         to.code.length == 0
+    //             ? to != address(0)
+    //             : ERC1155TokenReceiver(to).onERC1155BatchReceived(
+    //                 msg.sender,
+    //                 address(0),
+    //                 ids,
+    //                 amounts,
+    //                 data
+    //             ) == ERC1155TokenReceiver.onERC1155BatchReceived.selector,
+    //         "UNSAFE_RECIPIENT"
+    //     );
+    // }
 
     /// @notice Internal function for batch burning multiple token types owned by a specific address.
     /// @dev Decreases the balance of each token ID by the corresponding amount in the provided arrays.
@@ -190,27 +190,27 @@ abstract contract ERC1155 {
     /// @param from Address of the token owner.
     /// @param ids Array containing the IDs of the tokens to be burned.
     /// @param amounts Array containing the amounts of tokens to be burned.
-    function _batchBurn(
-        address from,
-        uint256[] memory ids,
-        uint256[] memory amounts
-    ) internal virtual {
-        uint256 idsLength = ids.length; // Saves MLOADs.
+    // function _batchBurn(
+    //     address from,
+    //     uint256[] memory ids,
+    //     uint256[] memory amounts
+    // ) internal virtual {
+    //     uint256 idsLength = ids.length; // Saves MLOADs.
 
-        require(idsLength == amounts.length, "LENGTH_MISMATCH");
+    //     require(idsLength == amounts.length, "LENGTH_MISMATCH");
 
-        for (uint256 i = 0; i < idsLength; ) {
-            balanceOf[from][ids[i]] -= amounts[i];
+    //     for (uint256 i = 0; i < idsLength; ) {
+    //         balanceOf[from][ids[i]] -= amounts[i];
 
-            // An array can't have a total length
-            // larger than the max uint256 value.
-            unchecked {
-                ++i;
-            }
-        }
+    //         // An array can't have a total length
+    //         // larger than the max uint256 value.
+    //         unchecked {
+    //             ++i;
+    //         }
+    //     }
 
-        emit TransferBatch(msg.sender, from, address(0), ids, amounts);
-    }
+    //     emit TransferBatch(msg.sender, from, address(0), ids, amounts);
+    // }
 
     /// @notice Internal function for burning a specific amount of a token type owned by a specific address.
     /// @dev Decreases the balance of the specified token ID by the provided amount.
