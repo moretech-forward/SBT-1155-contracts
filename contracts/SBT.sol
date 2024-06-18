@@ -7,7 +7,7 @@ import {Owned} from "./Owned.sol";
 /// @title Soulbound ERC1155 Tokens
 /// @notice Implements non-transferable ERC1155 tokens under the management of an owner.
 /// @dev Extends ERC1155 for multi-token functionality and Owned for access control.
-contract Soulbound is ERC1155, Owned {
+contract SoulboundERC1155 is ERC1155, Owned {
     /// @notice Auxiliary variable for frontend
     address public immutable myAddr;
 

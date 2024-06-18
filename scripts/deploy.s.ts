@@ -36,8 +36,8 @@ async function main() {
   await sbt.mint("0x4eb6EBcfA62792A01E5005c453F39D63493a79B8", "0", "1");
   await sbt.mint("0x3128ef7F0933cF2bA18f1Ef7280A7b684347B115", "0", "1");
 
-  await sbt.mint("0x4eb6EBcfA62792A01E5005c453F39D63493a79B8", "1", "100");
-  await sbt.mint("0x3128ef7F0933cF2bA18f1Ef7280A7b684347B115", "1", "432");
+  await sbt.mint("0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266", "1", "100");
+  await sbt.mint("0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266", "1", "432");
 
   console.log(`Soulbound deployed to ${sbt.target}`);
 }
